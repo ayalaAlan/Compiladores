@@ -1,1 +1,2 @@
 Analizador lexico
+Compilar: gcc anlex.c tablaSimbolos.c -o lexer
