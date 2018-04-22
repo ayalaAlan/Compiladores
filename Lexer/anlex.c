@@ -1,16 +1,16 @@
 /*
- *	Analizador Léxico
+ *	Analizador LÃ©xico
  *	Curso: Compiladores y Lenguajes de Bajo de Nivel
- *	Práctica de Programación Nro. 1
+ *	PrÃ¡ctica de ProgramaciÃ³n Nro. 1
  *
  *	Descripcion:
- *	Implementa un analizador léxico que reconoce números, identificadores,
- * 	palabras reservadas, operadores y signos de puntuación para un lenguaje
+ *	Implementa un analizador lÃ©xico que reconoce nÃºmeros, identificadores,
+ * 	palabras reservadas, operadores y signos de puntuaciÃ³n para un lenguaje
  * 	con sintaxis tipo Pascal.
  *
  */
 
-/*********** Inclusión de cabecera **************/
+/*********** InclusiÃ³n de cabecera **************/
 #include "anlex.h"
 #define NRO_CODIGOS 11	//nro de codigos definido en anlex.h
 
@@ -79,7 +79,7 @@ void sigLex()
 				i++;
 				c=fgetc(archivo);
 				if (i>=TAMLEX)
-					error("Longitud de Identificador excede tamaño de buffer");
+					error("Longitud de Identificador excede tamaÃ±o de buffer");
 			}while(isalpha(c));
 			id[i]='\0';
 			if (c!=EOF)
@@ -343,6 +343,7 @@ int main(int argc,char* args[])
 
 	initTabla();
 	initTablaSimbolos();
+	//almacena los nombres de los componentes lexicos (solo se utiliza para la impresion)
 	char nomCodigos[NRO_CODIGOS][TAMLEX] = {"","L_CORCHETE","R_CORCHETE","L_LLAVE","R_LLAVE","COMA","DOS_PUNTOS","CADENA","NUMERO","BOOLEAN"};
 	int pos;
 	if(argc > 1)
